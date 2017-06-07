@@ -34,6 +34,16 @@
    //jQuery equivelent to window.onload = function{}
    //code in here wont run until page loads
    $(function(){
+     var title = $("h1");
+
+     title.click(function() {
+      console.log("+ button clicked");
+      $("h1").css({
+        "color": "red"
+      });
+
+
+    })
 
 
 

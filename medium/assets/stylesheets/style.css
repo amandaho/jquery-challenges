@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  /*border: 1px white dashed;*/
+  background-color: #010101;
+  color: white;
+  font-family: 'Francois One', sans-serif;
+  font-size: 23px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.hits {
+  text-align: center;
+}
+
+button {
+  font-size: 15px;
+  text-align: center;
+  background-color: #C60C30;
+  margin-bottom: 5px;
+}
+
+#teamOneButton, #teamTwoButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+}

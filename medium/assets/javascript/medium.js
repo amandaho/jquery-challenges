@@ -36,13 +36,80 @@
  *   and how to use it in JS. You will also need to download a sound bite
  */
 
-(function(){
+(function() {
 
   //jQuery equivelent to window.onload = function{}
   //code in here wont run until page loads
-  $(function(){
+  $(function() {
 
+    var resetButton = $("#reset");
+    var numberOfResets = $("#num-resets");
+    var teamOneButton = $("#teamone-shoot");
+    var shotsTaken1 = $("#teamone-numshots");
+    var goalsTeamOne = $("#teamone-numhits");
+    var teamTwoButton = $("#teamtwo-shoot");
+    var shotsTaken2 = $("#teamtwo-numshots");
+    var goalsTeamTwo = $("#teamtwo-numhits");
+    var myAudio = new Audio("assets/sounds/Goal-horn-sound-effect.mp3");
+    var myAudio2 = new Audio("assets/sounds/Crowd-booing-sound-effect.mp3")
 
+    teamOneButton.click(function() {
+      console.log("+ button clicked");
+
+      var newShotsValue = parseInt(shotsTaken1.html()) + 1;
+
+      shotsTaken1.html(newShotsValue);
+
+      var randomrange = 1000;
+      var randomnumber = Math.floor((Math.random() * randomrange) + 1);
+      if (randomnumber % 2 === 0) {
+        goalsTeamOne.html(parseInt(goalsTeamOne.html()) + 1);
+          myAudio.play();
+          $("*").css({
+            "background": "#00843D"});
+          $("button").css({
+            "background": "#C60C30"});
+      }
+
+    })
+
+    teamTwoButton.click(function() {
+      console.log("+ button clicked");
+
+      var newShotsValue = parseInt(shotsTaken2.html()) + 1;
+
+      shotsTaken2.html(newShotsValue);
+
+      var randomrange = 1000;
+      var randomnumber = Math.floor((Math.random() * randomrange) + 1);
+      if (randomnumber % 2 === 0) {
+        goalsTeamTwo.html(parseInt(goalsTeamTwo.html()) + 1);
+          myAudio2.play();
+          $("*").css({
+            "background": "#0E3386"});
+          $("button").css({
+            "background": "#C60C30"});
+      }
+
+    })
+
+    resetButton.click(function() {
+      console.log("reset button clicked")
+
+      shotsTaken1.html(0);
+      goalsTeamOne.html(0);
+      shotsTaken2.html(0);
+      goalsTeamTwo.html(0);
+
+      var newResetsValue = parseInt(numberOfResets.html()) + 1;
+      numberOfResets.html(newResetsValue);
+
+      $("*").css({
+        "background": "#010101"});
+      $("button").css({
+        "background": "#C60C30"});
+
+    })
 
   })
 
